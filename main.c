@@ -6,33 +6,33 @@
 
 
 void obterDadosFuncionario(char* nome, float* salario_bruto, float* inss, float* ir, float* outros_descontos) {
-    printf("Digite o nome do funcionário: ");
+    printf("Digite o nome do funcionario: ");
     scanf(" %49[^\n]", nome);
 
-    printf("Digite o salário bruto: R$ ");
+    printf("Digite o salario bruto: R$ ");
     while (scanf("%f", salario_bruto) != 1 || *salario_bruto <= 0) {
-        printf("Erro: Salário bruto inválido. Tente novamente.\n");
-        fflush(stdin); 
-        printf("Digite o salário bruto: R$ ");
+        printf("Erro: Salario bruto inválido. Tente novamente.\n");
+        fflush(stdin); // limpar o buffer
+        printf("Digite o salario bruto: R$ ");
     }
 
     printf("Digite o valor do INSS: R$ ");
     while (scanf("%f", inss) != 1 || *inss < 0) {
-        printf("Erro: Valor do INSS inválido. Tente novamente.\n");
+        printf("Erro: Valor do INSS invalido. Tente novamente.\n");
         fflush(stdin);
         printf("Digite o valor do INSS: R$ ");
     }
 
     printf("Digite o valor do IR (Imposto de Renda): R$ ");
     while (scanf("%f", ir) != 1 || *ir < 0) {
-        printf("Erro: Valor do IR inválido. Tente novamente.\n");
+        printf("Erro: Valor do IR invalido. Tente novamente.\n");
         fflush(stdin);
         printf("Digite o valor do IR (Imposto de Renda): R$ ");
     }
 
     printf("Digite outros descontos: R$ ");
     while (scanf("%f", outros_descontos) != 1 || *outros_descontos < 0) {
-        printf("Erro: Valor de outros descontos inválido. Tente novamente.\n");
+        printf("Erro: Valor de outros descontos invalido. Tente novamente.\n");
         fflush(stdin);
         printf("Digite outros descontos: R$ ");
     }
@@ -55,7 +55,7 @@ void exibirHolerite(char* nome, float salario_bruto, float inss, float ir, float
     printf("INSS: R$ %.2f\n", inss);
     printf("Imposto de Renda: R$ %.2f\n", ir);
     printf("Outros Descontos: R$ %.2f\n", outros_descontos);
-    printf("Salário Líquido: R$ %.2f\n", salario_liquido);
+    printf("Salario Liquido: R$ %.2f\n", salario_liquido);
 }
 
 // Função para perguntar ao usuário se deseja cadastrar outro funcionário
